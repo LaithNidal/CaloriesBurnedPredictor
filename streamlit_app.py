@@ -10,7 +10,7 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, A
 from sklearn.metrics import accuracy_score,mean_squared_error, r2_score
 from sklearn.model_selection import cross_val_score, KFold
 from sklearn.preprocessing import StandardScaler
-import pickle
+import joblib
 
 
 #Configuring page setup 
