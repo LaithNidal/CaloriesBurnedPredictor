@@ -68,7 +68,7 @@ X_train_sc.head()
 
 
 # Setting up model with best parameters
-model = pickle.load(open('calories_burned_model.pkl', 'rb')) # read-binary
+model = pickle.load(open('calories_burned_model.joblib', 'rb')) # read-binary
 
 
   #Creating DataFrame
