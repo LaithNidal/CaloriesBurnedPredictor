@@ -20,7 +20,7 @@ st.markdown("<h4 style = 'text-align: center; color: black;'>This app predicts t
 
 #Loading the dataset
 
-df = pd.read_csv(r"C:\Users\User\Desktop\Assignment4\calories_burn.csv")
+df = pd.read_csv("calories_burn.csv")
 
 #Styling Streamlit Web App
 
@@ -31,7 +31,7 @@ with col1:
   st.write("  ")
   st.write("  ")
   st.write("  ")
-  st.image("calories.jpg", use_column_width = True)
+  st.image("calories.jpeg", use_column_width = True)
 
 with col2:
 
@@ -48,7 +48,7 @@ with col2:
   with col5:
     heart_rate = st.number_input(label = 'Enter your average heart rate during workout',placeholder="Enter your average heart rate during workout",value=None,min_value=0,max_value=200,step=1)
   with col6:
-    body_temp = st.number_input(label = 'Enter your average body temperature during your workout',placeholder="Enter your average body temperature during your workout",value=None,min_value=0,max_value=41,step=0.1)
+    body_temp = st.number_input(label = 'Enter your average body temperature during your workout',placeholder="Enter your average body temperature during your workout",value=None,min_value=0.0,max_value=41.0,step=0.1)
 
   pred = st.button("Predict", use_container_width = True)
 
