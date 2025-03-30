@@ -68,7 +68,7 @@ X_train_sc.head()
 
 
 # Setting up model with best parameters
-model = joblib.load(open('calories_burned_model.joblib', 'rb')) # read-binary
+model = joblib.load(open('calories_burn_model.joblib', 'rb')) # read-binary
 
 
   #Creating DataFrame
