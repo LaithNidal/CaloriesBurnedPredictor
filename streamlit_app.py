@@ -20,7 +20,7 @@ st.markdown("<h4 style = 'text-align: center; color: black;'>This app predicts t
 
 #Loading the dataset
 
-df = pd.read_csv("calories_burn.csv")
+df = pd.read_csv("calories_burn_clean.csv")
 
 #Styling Streamlit Web App
 
