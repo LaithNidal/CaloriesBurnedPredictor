@@ -67,7 +67,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 
 
 # Setting up model with best parameters
-model = joblib.load(open('calories_burned_model.joblib', 'rb'))
+model = joblib.load(open('calories_burn_model.joblib', 'rb'))
 
 
   #Creating DataFrame
