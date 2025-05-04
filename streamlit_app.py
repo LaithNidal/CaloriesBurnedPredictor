@@ -71,7 +71,7 @@ model = joblib.load(open('calories_burn_model.joblib', 'rb'))
 
 
   #Creating DataFrame
-input_df = pd.DataFrame({'Gender':[gender], 'Age':[age], 'Height':[height], 'Weight':[weight], 'Heart Rate':[heart_rate], 'Body Temperature':[body_temp], 'Duration':[duration]})
+input_df = pd.DataFrame({'Gender':[gender], 'Age':[age], 'Height':[height], 'Weight':[weight], 'Heart_Rate':[heart_rate], 'Body_Temperature':[body_temp], 'Duration':[duration]})
 
 df1 = pd.DataFrame(input_df)
 
