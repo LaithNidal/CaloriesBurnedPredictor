@@ -67,7 +67,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 
 
 # Setting up model with best parameters
-model = pickle.load(open('calories_burned_model.pkl', 'rb')) # read-binary
+model = joblib.load(open('calories_burned_model.joblib', 'rb')) # read-binary
 
 
   #Creating DataFrame
