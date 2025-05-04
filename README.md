@@ -1,5 +1,3 @@
-# CaloriesBurnedPredictor
-
 # Calories Burned Prediction Web App
 
 This project aims to predict calories burned during a workout using machine learning in the form of a supervised regression model. The core of the project involves preprocessing data to build a regression model to estimate calorie expenditure based on several user-specific features. The workflow includes data loading, preprocessing, model training, and deployment as a web application.
