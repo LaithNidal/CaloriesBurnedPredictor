@@ -78,7 +78,7 @@ df1 = pd.DataFrame(input_df)
 
   #Defining the correct for Columns 
 
-model_features = ['Gender', 'Age', 'Height','Weight', 'Heart Rate', 'Body Temperature', 'Duration']
+model_features = ['Gender', 'Age', 'Height','Weight', 'Heart_Rate', 'Body_Temperature', 'Duration']
 
 for feature in model_features: 
   if feature not in df1.columns: 
