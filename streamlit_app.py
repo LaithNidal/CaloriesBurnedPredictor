@@ -10,7 +10,7 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, A
 from sklearn.metrics import accuracy_score,mean_squared_error, r2_score
 from sklearn.model_selection import cross_val_score, KFold
 from sklearn.preprocessing import StandardScaler
-import pickle
+import joblib
 
 
 #Configuring page setup 
@@ -48,8 +48,8 @@ with col2:
   with col5:
     heart_rate = st.number_input(label = 'Enter your average heart rate during workout',placeholder="Enter your average heart rate during workout",value=None,min_value=0,max_value=200,step=1)
   with col6:
-    body_temp = st.number_input(label = 'Enter your average body temperature during your workout',placeholder="Enter your average body temperature during your workout",value=None,min_value=0.0,max_value=41.0,step=0.1)
-  col7 = st.columns(1)[0]
+    body_temp = st.number_input(label = 'Enter your average body temperature during your workout',placeholder="Enter your average body temperature during your workout",value=None,min_value=0,max_value=41,step=0.1)
+  col7 = st.columns(1)
   with col7: 
     duration = st.number_input(label = 'Enter the duration of your workout in minutes',placeholder="Enter workout duration",value=None,min_value=0,max_value=200,step=1)
   pred = st.button("Predict", use_container_width = True)
@@ -67,7 +67,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 
 
 # Setting up model with best parameters
-model = joblib.load(open('calories_burned_model.joblib', 'rb')) # read-binary
+model = joblib.load(open('calories_burned_model.joblib', 'rb'))
 
 
   #Creating DataFrame
@@ -85,7 +85,8 @@ for feature in model_features:
     df1[feature] = 0
 
 df1 = df1[model_features]
-df
+scaler = joblib.load('scaler.pkl')
+df1_scaled = scaler.transform(df1)
 
 #Making Prediction by Trained ML Model 
 
@@ -94,6 +95,6 @@ if pred:
   if any([gender is None, age is None, height is None, weight is None, heart_rate is None, body_temp is None]): 
     st.error("Please select all inputs before pressing the predict button.", icon ="📝")
   else: 
-    y_pred = model.predict(df1)
+    y_pred = model.predict(df1_scaled)
     #acc = accuracy_score(y_val, y_pred)
     st.write(f'Calories burned during your  = {y_pred}')
