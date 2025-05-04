@@ -31,7 +31,7 @@ with col1:
   st.write("  ")
   st.write("  ")
   st.write("  ")
-  st.image("calories.jpg", use_column_width = True)
+  st.image("calories.jpeg", use_container_width = True)
 
 with col2:
 
@@ -62,11 +62,8 @@ y = df['Calories']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 1)
 
-scaler = StandardScaler().fit(X_train)
-X_train_sc = scaler.transform(X_train)
-std = pd.DataFrame(scaler.transform(X_train), columns=X.columns)
-X_train_sc= std
-X_train_sc.head()
+
+
 
 
 # Setting up model with best parameters
@@ -88,6 +85,7 @@ for feature in model_features:
     df1[feature] = 0
 
 df1 = df1[model_features]
+df
 
 #Making Prediction by Trained ML Model 
 
