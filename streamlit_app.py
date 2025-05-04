@@ -49,7 +49,7 @@ with col2:
     heart_rate = st.number_input(label = 'Enter your average heart rate during workout',placeholder="Enter your average heart rate during workout",value=None,min_value=0,max_value=200,step=1)
   with col6:
     body_temp = st.number_input(label = 'Enter your average body temperature during your workout',placeholder="Enter your average body temperature during your workout",value=None,min_value=0,max_value=41,step=0.1)
-  col7 = st.columns(1)
+  col7 = st.columns(1)[0]
   with col7: 
     duration = st.number_input(label = 'Enter the duration of your workout in minutes',placeholder="Enter workout duration",value=None,min_value=0,max_value=200,step=1)
   pred = st.button("Predict", use_container_width = True)
