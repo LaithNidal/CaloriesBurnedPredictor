@@ -10,7 +10,7 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, A
 from sklearn.metrics import accuracy_score,mean_squared_error, r2_score
 from sklearn.model_selection import cross_val_score, KFold
 from sklearn.preprocessing import StandardScaler
-import joblib
+import pickle
 
 
 #Configuring page setup 
@@ -31,11 +31,11 @@ with col1:
   st.write("  ")
   st.write("  ")
   st.write("  ")
-  st.image("calories.jpeg", use_container_width = True)
+  st.image("calories.jpg", use_column_width = True)
 
 with col2:
 
-  gender = st.radio(label = 'Select your gender (1 for male 0 for female)', options = df['Gender'].unique(), index= None)
+  gender = st.radio(label = 'Select your gender (0 for male 1 for female)', options = df['Gender'].unique(), index= None)
 
   age = st.number_input(label = 'Enter your age',placeholder="Enter your age",value=None,min_value=0,max_value=99,step=1)
 
@@ -48,8 +48,10 @@ with col2:
   with col5:
     heart_rate = st.number_input(label = 'Enter your average heart rate during workout',placeholder="Enter your average heart rate during workout",value=None,min_value=0,max_value=200,step=1)
   with col6:
-    body_temp = st.number_input(label = 'Enter your average body temperature during your workout',placeholder="Enter your average body temperature during your workout",value=None,min_value=0.0,max_value=41.0,step=0.1)
-
+    body_temp = st.number_input(label = 'Enter your average body temperature during your workout',placeholder="Enter your average body temperature during your workout",value=None,min_value=0,max_value=41,step=0.1)
+  col7 = st.columns(1)
+  with col7: 
+    duration = st.number_input(label = 'Enter the duration of your workout in minutes',placeholder="Enter workout duration",value=None,min_value=0,max_value=200,step=1)
   pred = st.button("Predict", use_container_width = True)
 
 
@@ -68,18 +70,18 @@ X_train_sc.head()
 
 
 # Setting up model with best parameters
-model = joblib.load(open('calories_burn_model.joblib', 'rb')) # read-binary
+model = pickle.load(open('calories_burned_model.pkl', 'rb')) # read-binary
 
 
   #Creating DataFrame
-input_df = pd.DataFrame({'Gender':[gender], 'Age':[age], 'Height':[height], 'Weight':[weight], 'Heart Rate':[heart_rate], 'Body Temperature':[body_temp]})
+input_df = pd.DataFrame({'Gender':[gender], 'Age':[age], 'Height':[height], 'Weight':[weight], 'Heart Rate':[heart_rate], 'Body Temperature':[body_temp], 'Duration':[duration]})
 
 df1 = pd.DataFrame(input_df)
 
 
   #Defining the correct for Columns 
 
-model_features = ['Gender', 'Age', 'Height','Weight', 'Heart Rate', 'Body Temperature']
+model_features = ['Gender', 'Age', 'Height','Weight', 'Heart Rate', 'Body Temperature', 'Duration']
 
 for feature in model_features: 
   if feature not in df1.columns: 
