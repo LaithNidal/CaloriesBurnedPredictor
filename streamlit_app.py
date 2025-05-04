@@ -71,14 +71,14 @@ model = joblib.load(open('calories_burn_model.joblib', 'rb'))
 
 
   #Creating DataFrame
-input_df = pd.DataFrame({'Gender':[gender], 'Age':[age], 'Height':[height], 'Weight':[weight], 'Heart_Rate':[heart_rate], 'Body_Temp':[body_temp], 'Duration':[duration]})
+input_df = pd.DataFrame({'Gender':[gender], 'Age':[age], 'Height':[height], 'Weight':[weight], 'Duration':[duration],'Heart_Rate':[heart_rate], 'Body_Temp':[body_temp]})
 
 df1 = pd.DataFrame(input_df)
 
 
   #Defining the correct for Columns 
 
-model_features = ['Gender', 'Age', 'Height','Weight', 'Heart_Rate', 'Body_Temp', 'Duration']
+model_features = ['Gender', 'Age', 'Height','Weight', 'Duration','Heart_Rate', 'Body_Temp']
 
 for feature in model_features: 
   if feature not in df1.columns: 
