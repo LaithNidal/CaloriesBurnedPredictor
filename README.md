@@ -26,11 +26,11 @@ Model evaluation included metrics such as **R² score 0f 0.997** (after hyperpar
 
 The web app provides a simple, interactive interface where users can input their personal details and workout data to instantly get a calorie prediction.
 
-🔗 Try it here: Calories Burned Predictor
+🔗 Try it here: [Calories Burned Predictor](https://caloriesburnedpredictor1.streamlit.app/)
 
 Inputs include:
 
-* Genderv
+* Gender
 * Age
 * Height
 * Weight
