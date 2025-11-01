@@ -1,4 +1,4 @@
-# 🏋️‍♂️Calories Burned Prediction:Supervised ML Regression Model (Random Forest Regressor) - Hosted on Streamlit Web App
+# 🏋️‍♂️Calories Burned Prediction: Supervised ML Regression Model (Random Forest Regressor) - Hosted on Streamlit Web App
 
 **🚀 Project Overview**
 
@@ -49,8 +49,10 @@ Inputs include:
 
 **📁 Repository Contents**
 
-Assingment4-SupervisedML-Regression.ipynb – Jupyter notebook for data exploration, model training, and evaluation
+* `Assingment4-SupervisedML-Regression.ipynb` – Jupyter notebook for data exploration, model training, and evaluation
 
-model.pkl – Trained Random Forest model
+* `calories_burn_model.joblib` – Trained Random Forest model dumped via `joblib` library 
 
-app.py – Streamlit web application
+* `streamlit_app.py` – Streamlit web application
+
+* `calories_burn.csv` - Cleaned and raw version of train/ test data.
